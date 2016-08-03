@@ -1,0 +1,5 @@
+- Repository einrichten
+- GitIgnore anlegen
+- Projekt anlegen
+- Resourcen kopieren
+  - Fonts
