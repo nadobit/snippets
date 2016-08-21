@@ -7,6 +7,15 @@ Abhängigkeiten installieren
 pip install django-registration-redux
 ```
 
+```python
+# settings.py
+INSTALLED_APPS += (
+    'registration',
+)
+```
+
+
+
 Registration urls verknüpfen
 Beispiel root in url conf
 
