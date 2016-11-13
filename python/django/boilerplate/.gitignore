@@ -3,5 +3,6 @@
 *.mo
 
 /public
+/.virtualenv
 
 local.py
