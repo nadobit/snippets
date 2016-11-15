@@ -4,7 +4,6 @@ from fabric import colors
 from fabric.api import env, task, lcd, local, roles, cd, run, prefix
 
 BASE_DIR = os.path.dirname(__file__)
-DJANGO_PROJECT = 'XXXXXXXXXXXXXXXXXXXXXXX'
 DJANGO_DIR = os.path.join(BASE_DIR, 'source')
 
 DEBIAN_USERNAME = 'XXXXXXXXXXXXXXXXXXXXXXX'
