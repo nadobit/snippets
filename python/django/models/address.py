@@ -8,7 +8,7 @@ from django.utils.translation import pgettext_lazy
 
 def validate_zip_code(value):
 
-    zip_code = ZipCodeGermany.objects.filter(zip_code=value).first()
+    zip_code = GermanZipCode.objects.filter(zip_code=value).first()
     if not zip_code:
         raise ValidationError(
             _('%(value)s seems not to be an invalid zip code'),
@@ -16,7 +16,7 @@ def validate_zip_code(value):
         )
 
 
-class ZipCodeGermany(models.Model):
+class GermanZipCode(models.Model):
 
     STATE_BW = 'BW'
     STATE_BY = 'BY'
@@ -85,3 +85,34 @@ class Address(models.Model):
     @property
     def get_address_line(self):
         return "%s %s, %s %s" % (self.street, self.house_number, self.zip_code, self.city)
+
+# admin.py example
+
+# # -*- coding: utf-8 -*-
+# from django.contrib import admin
+# from . import models
+
+
+# @admin.register(models.GermanZipCode)
+# class GermanZipCodeAdmin(admin.ModelAdmin):
+#     fieldsets = (
+#         (None, {
+#             'fields': (
+#                 'state',
+#                 'zip_code',
+#                 ('city', 'city_addon'),
+#                 'phone_prefix',
+#             )
+#         }),
+#     )
+
+#     list_display = (
+#         'zip_code',
+#         'city',
+#         'state',
+#         'phone_prefix',
+#     )
+
+#     list_filter = (
+#         'state',
+#     )
