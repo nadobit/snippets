@@ -2,4 +2,3 @@
 from .common import *  # NOQA
 
 DEBUG = False
-ALLOWED_HOSTS = ['*']
